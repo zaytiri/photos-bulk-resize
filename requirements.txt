@@ -1,2 +1,4 @@
 setuptools>=65.5.1
 PyYAML~=6.0
+margument>=1.0.0
+Pillow>=9.5.0
