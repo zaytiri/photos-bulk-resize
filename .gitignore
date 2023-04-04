@@ -152,4 +152,4 @@ cython_debug/
 .idea/
 
 # other
-plusize/settings/configs.yaml
+phulize/settings/configs.yaml
