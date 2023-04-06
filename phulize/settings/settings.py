@@ -80,6 +80,13 @@ class Settings(Arguments):
                                  metavar="",
                                  default=False)
 
+        self.run = Argument(name='run',
+                            abbreviation_name='-r',
+                            full_name='--run',
+                            help_message='If specified, it will start the resizing process with configured settings.',
+                            metavar="",
+                            default=False)
+
     def add_arguments(self, args_parser):
         args_parser.add_argument(self.safety_question.full_name,
                                  action=argparse.BooleanOptionalAction,
@@ -119,6 +126,11 @@ class Settings(Arguments):
         args_parser.add_argument(self.extensions.abbreviation_name, self.extensions.full_name,
                                  nargs='*',
                                  help=self.extensions.help_message,
+                                 default=argparse.SUPPRESS)
+
+        args_parser.add_argument(self.run.abbreviation_name, self.run.full_name,
+                                 action='store_true',
+                                 help=self.run.help_message,
                                  default=argparse.SUPPRESS)
 
     def process_arguments(self, settings):

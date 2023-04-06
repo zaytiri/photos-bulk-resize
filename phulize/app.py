@@ -7,16 +7,11 @@ from phulize.utils.log import throw
 
 
 def main():
-    print('program entrypoint')
     arguments = Manager().configure_arguments()
 
-    if not arguments['Settings'].path.value:
-        throw('Path is empty.')
+    validate_settings(arguments['Settings'])
 
     epilogue(arguments['Settings'])
-
-    if arguments['Settings'].shutdown.value:
-        print('The computer will be shutdown when this program is done.\n')
 
     photos = Search(arguments['Settings'])
 
@@ -35,8 +30,19 @@ def main():
         subprocess.run(["shutdown", "-s"])
 
 
+def validate_settings(arguments):
+    if not arguments.run.value:
+        sys.exit()
+
+    if not arguments.path.value:
+        throw('Path is empty.')
+
+    if arguments.shutdown.value:
+        print('The computer will be shutdown when this program is done.\n')
+
+
 def epilogue(arguments):
-    print('All photos found with the a ', end="")
+    print('All images found with the a ', end="")
     first = True
     for extension in arguments.extensions.value:
         if first:
