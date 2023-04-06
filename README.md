@@ -76,19 +76,19 @@ Final Statistics:
 
 ### Folder example
 
-The original folder full of images to be resized:
+The original folder full of images to be resized:<br>
 ![1](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/1.png)
 
-Content of original folder before resize with pictures' original size:
+Content of original folder before resize with pictures' original size:<br>
 ![5](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/5.png)
 
-Both the original folder and the folder created after all is finished, which contains all original images:
+Both the original folder and the folder created after all is finished, which contains all original images:<br>
 ![2](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/2.png)
 
-Display of both folders containing exactly the same hierarchy:
+Display of both folders containing exactly the same hierarchy:<br>
 ![3](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/3.png)
 
-Content of original folder after resize with pictures' reduced size at 55% quality and the output file:
+Content of original folder after resize with pictures' reduced size at 55% quality and the output file:<br>
 ![4](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/4.png)
 
 <a name="features"></a>
