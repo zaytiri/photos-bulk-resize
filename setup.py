@@ -11,7 +11,7 @@ version = get_version()
 setup(
     name="phulize",
     version=version,
-    description="A python CLI command tool to resize photos while conserving folder hierarchy and preserving original ones in a different folder.",
+    description="A python CLI tool to resize images while conserving folder hierarchy and preserving original ones in a different folder.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/zaytiri/photos-bulk-resize",

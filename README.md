@@ -77,19 +77,19 @@ Final Statistics:
 ### Folder example
 
 The original folder full of images to be resized:
-![1](readme_imgs/Screenshot_1.png)
+![1](readme_imgs/1.png)
 
 Content of original folder before resize with pictures' original size:
-![4](readme_imgs/Screenshot_5.png)
+![5](readme_imgs/5.png)
 
 Both the original folder and the folder created after all is finished, which contains all original images:
-![2](readme_imgs/Screenshot_2.png)
+![2](readme_imgs/2.png)
 
 Display of both folders containing exactly the same hierarchy:
-![3](readme_imgs/Screenshot_3.png)
+![3](readme_imgs/3.png)
 
 Content of original folder after resize with pictures' reduced size at 55% quality and the output file:
-![4](readme_imgs/Screenshot_4.png)
+![4](readme_imgs/4.png)
 
 <a name="features"></a>
 
