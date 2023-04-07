@@ -28,9 +28,9 @@ class Settings(Arguments):
         self.quality = Argument(name='quality',
                                 abbreviation_name='-q',
                                 full_name='--quality',
-                                help_message='The quality, in percentage, the image should have relative to 100% quality. For instance, '
-                                             'an original image has always 100% quality, if the inserted quality is 50 than the image\'s quality is '
-                                             '50% of the original 100%. Ideal percentage and default value is: between 50-60',
+                                help_message='The quality, in percentage, the image should have relative to 100%% quality. For instance, '
+                                             'an original image has always 100%% quality, if the inserted quality is 50 than the image\'s quality is '
+                                             '50%% of the original 100%%. Ideal percentage and default value is: between 50-60',
                                 metavar="",
                                 to_save=True,
                                 default=50)
