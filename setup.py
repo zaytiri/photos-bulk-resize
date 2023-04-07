@@ -28,7 +28,7 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     keywords="photos, image, processing, resize, reduce, cli, folder, hierarchy, bulk",
-    package_data={'phulize': ['progsettings.yaml']},
+    package_data={'phulize': ['version/progsettings.yaml']},
     packages=["phulize", "phulize.settings", "phulize.version", "phulize.utils"],
     python_requires=">=3.10.6",
     install_requires=[
