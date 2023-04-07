@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
 - Removed
 
+## [1.0.1] - 2023-04-07
+
+### Fixed
+- version's file not being found because of bad configurations on setup.py.
+
 ## [1.0.0] - 2023-04-06
 
 ### Added
