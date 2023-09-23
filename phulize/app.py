@@ -6,16 +6,28 @@ from phulize.settings.manager import Manager
 from phulize.utils.log import throw
 
 
-def main():
-    arguments = Manager().configure_arguments()
+def main(custom_args=None, is_gui=False):
+    arguments = Manager().configure_arguments(custom_args)
 
-    validate_settings(arguments['Settings'])
+    validate_settings(arguments['Settings'], is_gui)
 
-    epilogue(arguments['Settings'])
+    result = run_resizer(arguments['Settings'], is_gui)
 
-    photos = Search(arguments['Settings'])
+    if arguments['Settings'].shutdown.value and not is_gui:
+        subprocess.run(["shutdown", "-s"])
 
-    if arguments['Settings'].safety_question.value:
+    return result
+
+
+def run_resizer(arguments, is_gui):
+    photos = Search(arguments)
+
+    if not arguments.run.value:
+        return
+
+    epilogue(arguments)
+
+    if arguments.safety_question.value and not is_gui:
         response = input(
             'Are you sure you want to continue? \n [Y/n]')
         if response == 'n' or response == 'N':
@@ -24,20 +36,14 @@ def main():
             photos.search()
             return
 
-    photos.search()
-
-    if arguments['Settings'].shutdown.value:
-        subprocess.run(["shutdown", "-s"])
+    return photos.search()
 
 
-def validate_settings(arguments):
-    if not arguments.run.value:
-        sys.exit()
-
+def validate_settings(arguments, is_gui):
     if not arguments.path.value:
-        throw('Path is empty.')
+        throw('Path is empty.', to_exit=not is_gui)
 
-    if arguments.shutdown.value:
+    if arguments.shutdown.value and not is_gui:
         print('The computer will be shutdown when this program is done.\n')
 
 

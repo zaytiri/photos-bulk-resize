@@ -9,6 +9,7 @@ from phulize.utils.log import throw
 
 class Settings(Arguments):
     def __init__(self):
+        self.is_gui = None
         self.path = Argument(name='path',
                              abbreviation_name='-p',
                              full_name='--path',
@@ -87,6 +88,9 @@ class Settings(Arguments):
                             metavar="",
                             default=False)
 
+    def set_is_gui(self, is_gui):
+        self.is_gui = is_gui
+
     def add_arguments(self, args_parser):
         args_parser.add_argument(self.safety_question.full_name,
                                  action=argparse.BooleanOptionalAction,
@@ -157,4 +161,4 @@ class Settings(Arguments):
         if self.path.name in user_args:
             argument_path = Directory(user_args.path)
             if not argument_path.exists():
-                throw(user_args.path + ' path does not exist.')
+                throw(user_args.path + ' path does not exist.', to_exit=not self.is_gui)

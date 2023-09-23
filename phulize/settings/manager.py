@@ -14,12 +14,15 @@ class Manager:
         self.args = argparse.ArgumentParser()
         self.args.add_argument('--version', action='version', version='%(prog)s ' + str(get_version()))
 
-    def configure_arguments(self):
+    def configure_arguments(self, custom_args=None, is_gui=None):
         # manage generic configurations
-        settings = NonRepeatableSettings(path=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'configs.yaml'),
-                                         program_arguments=Settings(),
+        custom_settings = Settings()
+        custom_settings.set_is_gui(is_gui)
+
+        settings = NonRepeatableSettings(path=os.path.join(get_path(), 'configs.yaml'),
+                                         program_arguments=custom_settings,
                                          options=Options(show_saved=True, save_different=True))
 
         settings_processor = SettingsProcessor([settings], self.args)
 
-        return settings_processor.run()
+        return settings_processor.run(custom_args=custom_args)
