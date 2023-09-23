@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
 - Removed
 
+## [1.0.3] - 2023-09-23
+
+### Added
+- GUI version.
+
+### Fixed
+- some issues and adaptions for the program to be used by the GUI as well.
+
 ## [1.0.2] - 2023-04-07
 
 ### Fixed

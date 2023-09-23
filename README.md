@@ -1,6 +1,6 @@
 [![Downloads](https://pepy.tech/badge/phulize)](https://pepy.tech/project/phulize)
 
-# Photo Resizer
+# Photo Resizer CLI + GUI
 
 ## Table of Contents
 
@@ -44,6 +44,14 @@ When all is finished, an output file will be created with statistics and relevan
 - display how much size was resized between all photos;
 - total number of photos resized, increased, unsuccessful and found;
 - warning if the photo size increased instead of decreased;
+
+### GUI
+
+Guide coming soon...
+
+Some images for current interface:
+![1](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/11.png)
+![2](https://github.com/zaytiri/photos-bulk-resize/blob/main/readme_imgs/22.png)
 
 ### Output file example
 
@@ -142,7 +150,7 @@ pip3 --no-cache-dir install phulize
 | -p                 | --path                                 | ***REQUIRED*** to resize photos      | empty         | Absolute path of the folder containing images to be resized.                                                                                     |
 | -e                 | --extensions                           | ***REQUIRED*** to resize photos      | empty         | Insert the extensions of all the images that should be resized.                                                                                  |
 | -q                 | --quality                              | ***OPTIONAL***                       | 55            | The desired quality of the image. An original image has 100% quality, meaning that anything below this value will reduce the size of the images. |
-| -f                 | --folder                               | ***OPTIONAL***                       | _ORIGINAL     | The name or path of the folder which will contain all original photos resized.                                                                   |
+| -f                 | --folder                               | ***OPTIONAL***                       | _ORIGINAL     | The name or path of the folder which will contain all original photos already resized.                                                           |
 | -hi                | --higher                               | ***OPTIONAL***                       | 0             | The size in ***Bytes*** of any image that should be resized. Any images' size higher than this value will be resized.                            |
 | -b                 | --below                                | ***OPTIONAL***                       | 0             | The size in ***Bytes*** of any image that should be resized. Any images' size below this value will be resized.                                  |
 | ---                | --safety-question/--no-safety-question | ***OPTIONAL***                       | True          | Enable or disable the safety question                                                                                                            |
