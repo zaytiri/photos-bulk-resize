@@ -7,7 +7,7 @@ from phulize.utils.photo_file import PhotoFile
 
 class Search:
     def __init__(self, arguments):
-        self.path = arguments.path.value
+        self.path = '\\'.join(arguments.path.value.split('/'))
         self.extensions = arguments.extensions.value
         self.cloned_folder = arguments.folder.value
         self.percentage = arguments.quality.value
