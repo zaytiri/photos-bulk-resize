@@ -1,12 +1,24 @@
 import os
 
 import argparse
+from os.path import expanduser
 
 from margument.non_repeatable_settings import NonRepeatableSettings
 from margument.options import Options
 from margument.settings_processor import SettingsProcessor
 from phulize.settings.settings import Settings
 from phulize.version.progsettings import get_version
+
+
+def get_path():
+    home = expanduser("~")
+    path = os.path.join(home, 'phulize')
+    if not os.path.exists(path):
+        os.mkdir(path)
+    final_path = os.path.join(path, 'settings')
+    if not os.path.exists(final_path):
+        os.mkdir(final_path)
+    return final_path
 
 
 class Manager:
