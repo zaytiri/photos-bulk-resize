@@ -42,6 +42,8 @@ class Search:
         else:
             print('\nNo files were found with defined extensions.')
 
+        return {'output_file': self.output.file.path, 'folder': self.folder_hierarchy.clone.root, 'path': self.path}
+
     def is_valid(self, photo):
         if photo.extension not in self.extensions:
             return False
