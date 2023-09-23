@@ -26,7 +26,7 @@ class Manager:
         self.args = argparse.ArgumentParser()
         self.args.add_argument('--version', action='version', version='%(prog)s ' + str(get_version()))
 
-    def configure_arguments(self, custom_args=None, is_gui=None):
+    def configure_arguments(self, custom_args=None, is_gui=False):
         # manage generic configurations
         custom_settings = Settings()
         custom_settings.set_is_gui(is_gui)

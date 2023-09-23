@@ -7,7 +7,7 @@ from phulize.utils.log import throw
 
 
 def main(custom_args=None, is_gui=False):
-    arguments = Manager().configure_arguments(custom_args)
+    arguments = Manager().configure_arguments(custom_args, is_gui)
 
     validate_settings(arguments['Settings'], is_gui)
 
