@@ -26,9 +26,13 @@ def list_configs():
     return list_of_configs
 
 
-def get_configs_file_path():
+def get_configs_path():
     home = expanduser("~")
-    return os.path.join(home, "phulize", "settings", "configs.yaml")
+    return os.path.join(home, "phulize", "settings")
+
+
+def get_configs_file_path():
+    return os.path.join(get_configs_path(), "configs.yaml")
 
 
 def open_file(path):
