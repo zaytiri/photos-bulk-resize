@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
 - Removed
 
+## [1.0.4] - 2024-01-25
+
+### Fixed
+- vulnerability due to external library: Pillow. Update Pillow's version to 10.0.2.
+
 ## [1.0.3] - 2023-09-23
 
 ### Added
