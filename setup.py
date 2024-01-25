@@ -34,7 +34,7 @@ setup(
     install_requires=[
         "PyYAML~=6.0",
         "margument>=1.0.3",
-        "Pillow~=9.5.0",
+        "Pillow~=10.2.0",
     ],
     entry_points={
         "console_scripts": [
