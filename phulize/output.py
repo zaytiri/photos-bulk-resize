@@ -2,6 +2,7 @@ from datetime import date, datetime
 
 from phulize.utils.bytes_conversion import set_converted_bytes_with_label
 from phulize.utils.file import File
+from phulize.utils.operating_system import OperatingSystem, OperatingSystemEnum
 
 
 class Output:
@@ -43,7 +44,7 @@ class Output:
         date_now = '[' + str(date.today().year) + '-' + str(date.today().month) + '-' + str(date.today().day) + ' ' + str(
             datetime.utcnow().hour) + '-' + str(
             datetime.utcnow().minute) + '-' + str(datetime.utcnow().second) + ']'
-        self.file = File(absolute_path_parent + '\\output' + date_now + '.txt')
+        self.file = File(absolute_path_parent + self.get_correct_slash_symbol() + 'output' + date_now + '.txt')
         self.file.open('a')
 
         for photo in self.photos:
@@ -76,3 +77,11 @@ class Output:
 
     def __add_line(self, message):
         self.file.write(message + '\n')
+
+    def get_correct_slash_symbol(self):
+        operating_system = OperatingSystem().get_current()
+        
+        if operating_system == OperatingSystemEnum.LINUX:
+            return '/'
+        
+        return '\\'
