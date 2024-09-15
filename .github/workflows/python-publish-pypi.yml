@@ -33,6 +33,8 @@ jobs:
         pip install
         build
         --user
+        # If requirements.txt exists, install from it
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build a binary wheel and a source tarball
       run: python3 -m build
     - name: Store the distribution packages
