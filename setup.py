@@ -32,9 +32,12 @@ setup(
     packages=["phulize", "phulize.settings", "phulize.version", "phulize.utils"],
     python_requires=">=3.10.6",
     install_requires=[
-        "PyYAML~=6.0",
-        "margument>=1.0.3",
+        "setuptools>=65.5.1",
+        "margument~=1.1.4",
         "Pillow~=10.2.0",
+        "PySimpleGUI~=4.60.5",
+        "piexif~=1.1.3",
+        "pyyaml~=6.0"
     ],
     entry_points={
         "console_scripts": [
