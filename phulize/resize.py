@@ -24,12 +24,9 @@ class Resize:
 
             image = Image.open(path)
             
-            file_info = os.stat(path)
-            
             if 'IMG' in self.photo.name_only:
 
                 photo_title_splitted = self.photo.name_only.split('_')
-                print (photo_title_splitted)
                 year = photo_title_splitted[1][0:4]
                 month = photo_title_splitted[1][4:6]
                 day = photo_title_splitted[1][6:]

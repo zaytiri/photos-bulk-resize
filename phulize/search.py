@@ -24,9 +24,6 @@ class Search:
 
         self.folder_hierarchy.create_parent(self.cloned_folder)
         for root, dirs, files in main_directory.search_through():
-            print(files)
-            print(dirs)
-            print(root)
             for photo in files:
                 current_photo = PhotoFile(photo, root)
                 
@@ -81,7 +78,6 @@ class Search:
     def get_correct_path(self, path):
         operating_system = OperatingSystem().get_current()
         
-        print(operating_system)
         if operating_system == OperatingSystemEnum.LINUX:
             return path
         
