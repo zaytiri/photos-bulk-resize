@@ -39,6 +39,10 @@ setup(
         "piexif~=1.1.3",
         "pyyaml~=6.0"
     ],
+    setup_requires=[
+        "setuptools>=65.5.1",
+        "pyyaml~=6.0"
+    ],
     entry_points={
         "console_scripts": [
             "phulize=phulize:app.main",
