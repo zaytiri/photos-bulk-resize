@@ -1,12 +1,12 @@
 from setuptools import setup
 import pathlib
 
-from phulize.version.progsettings import get_version
+# from phulize.version.progsettings import get_version
 
 here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
-version = get_version()
+version = 999
 
 setup(
     name="phulize",
