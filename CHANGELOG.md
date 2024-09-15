@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
 - Removed
 
+## [1.1.1] - 2024-09-15
+
+### Fixed
+- github action workflow on publishing package to PyPi.
+
 ## [1.1.0] - 2024-09-15
 
 ### Added
