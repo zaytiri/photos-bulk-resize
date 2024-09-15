@@ -7,7 +7,7 @@ from margument.non_repeatable_settings import NonRepeatableSettings
 from margument.options import Options
 from margument.settings_processor import SettingsProcessor
 from phulize.settings.settings import Settings
-# from phulize.version.progsettings import get_version
+from phulize.version.progsettings import get_version
 
 
 def get_path():
@@ -24,7 +24,7 @@ def get_path():
 class Manager:
     def __init__(self):
         self.args = argparse.ArgumentParser()
-        self.args.add_argument('--version', action='version', version='%(prog)s ' + str(999))
+        self.args.add_argument('--version', action='version', version='%(prog)s ' + str(get_version()))
 
     def configure_arguments(self, custom_args=None, is_gui=False):
         # manage generic configurations
