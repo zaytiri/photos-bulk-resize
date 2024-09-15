@@ -33,16 +33,12 @@ jobs:
         pip install
         build
         --user
-    - name: Install dependencies
-      run: >-
-        python3 -m
-        pip install -r 
-        requirements.txt
     - name: Install yaml
       run: >-
         python3 -m
         pip install
         pyyaml
+        --user
     - name: Build a binary wheel and a source tarball
       run: python3 -m build
     - name: Store the distribution packages
