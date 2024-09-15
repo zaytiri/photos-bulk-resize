@@ -1,16 +1,26 @@
+import os
+import sys
 from setuptools import setup
 import pathlib
+
+import yaml
 
 here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
-def get_version_dynamically():
-    from phulize.version.progsettings import get_version
-    return get_version()
+def get_version():
+    if getattr(sys, 'frozen', False):
+        path = os.path.join(sys._MEIPASS, "files/progsettings.yaml")
+    else:
+        path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'progsettings.yaml')
+
+    with open(path, 'r') as settings_file:
+        settings = yaml.safe_load(settings_file)['prog'.upper()]
+        return settings['version'.upper()]
 
 setup(
     name="phulize",
-    version=get_version_dynamically(),
+    version=get_version(),
     description="A python CLI tool to resize images while conserving folder hierarchy and preserving original ones in a different folder.",
     long_description=long_description,
     long_description_content_type="text/markdown",
