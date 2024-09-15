@@ -3,11 +3,12 @@ from phulize.resize import Resize
 from phulize.utils.directory import Directory
 from phulize.utils.folder_hierarchy import FolderHierarchy
 from phulize.utils.photo_file import PhotoFile
+from phulize.utils.operating_system import OperatingSystem, OperatingSystemEnum
 
 
 class Search:
     def __init__(self, arguments):
-        self.path = '\\'.join(arguments.path.value.split('/'))
+        self.path = self.get_correct_path(arguments.path.value)
         self.extensions = arguments.extensions.value
         self.cloned_folder = arguments.folder.value
         self.percentage = arguments.quality.value
@@ -22,11 +23,13 @@ class Search:
         found_files = False
 
         self.folder_hierarchy.create_parent(self.cloned_folder)
-
         for root, dirs, files in main_directory.search_through():
+            print(files)
+            print(dirs)
+            print(root)
             for photo in files:
                 current_photo = PhotoFile(photo, root)
-
+                
                 if not self.is_valid(current_photo):
                     continue
 
@@ -41,7 +44,8 @@ class Search:
             print('\nAn output file with a summary was created in the following directory: \n\t\t' + self.output.file.path + '')
         else:
             print('\nNo files were found with defined extensions.')
-
+            return {}
+        
         return {'output_file': self.output.file.path, 'folder': self.folder_hierarchy.clone.root, 'path': self.path}
 
     def is_valid(self, photo):
@@ -73,3 +77,13 @@ class Search:
         else:
             self.output.add_file(photo)
             print('Encoding successfully done!')
+
+    def get_correct_path(self, path):
+        operating_system = OperatingSystem().get_current()
+        
+        print(operating_system)
+        if operating_system == OperatingSystemEnum.LINUX:
+            return path
+        
+        splitted_path_by_slash = path.split('/')
+        return '\\'.join(splitted_path_by_slash)

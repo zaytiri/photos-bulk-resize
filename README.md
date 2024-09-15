@@ -173,6 +173,7 @@ pip3 --no-cache-dir install phulize
 ---
 ### Important 
 - The quality of the image to be resized, by default, is 50%, meaning all images to resize will have, approximately, 50% less quality than the original image. This can be change, adding the '--quality' argument with a number between 0 and 100.
+- If the file image has the name in the following format: "IMG_<yyyymmdd>_<hhmmss>", the date is going to be added to the converted image's date-created metadata. This means the metadata of the image is going to be correct in the date_created field. Before this improvement, the date_created would be the date the file was converted since it creates a new file.
 ---
 
 Any additional help can be provided if the following command is run:

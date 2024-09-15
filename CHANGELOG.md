@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
 - Removed
 
+## [1.1.0] - 2024-09-15
+
+### Added
+- feature to use the image's name as the original date created of the file. The image's name must have the format of "IMG_<yyyymmdd>_<hhmmss>" to be recognized as the date created of the file.
+
 ## [1.0.5] - 2024-01-25
 
 ### Fixed
